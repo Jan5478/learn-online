@@ -1,0 +1,100 @@
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  background: #f6f6f6;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 32px;
+  font-family: 'PingFangSC-Regular', 'DroidSansFallback', 'Microsoft YaHei', '微软雅黑', Arial, Helvetica, Verdana, sans-serif;
+  //font-family:  'PingFangSC-Regular', 'DroidSansFallback', 'Microsoft YaHei', '微软雅黑', Arial, Helvetica, Verdana, sans-serif;
+  transition: scroll .5s;
+}
+
+ul,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.d-b {
+  display: block;
+}
+
+.d-ibm {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.fl--clear {
+  &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+  }
+}
+
+.fl--left {
+  float: left;
+}
+
+.fl--right {
+  float: right;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--col {
+  flex-direction: column;
+}
+
+.flex--center {
+  justify-content: center;
+}
+
+.flex--middle {
+  align-items: center;
+}
+
+.flex__item {
+  flex: 1;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--right {
+  text-align: right;
+}
+
+.text--bold {
+  font-weight: bold;
+}
+
+.color--main {
+  color: #333;
+}
