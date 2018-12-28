@@ -1,5 +1,5 @@
 <template>
-<h1>detailxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxssss</h1>
+<h1>鼻鼻我爱你呦</h1>
 </template>
 
 <script>
