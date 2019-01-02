@@ -114,7 +114,7 @@
             width: 20px;
             height: 20px;
             position: absolute;
-            top: 63px;
+            top: 68px;
             left: 65px;
             font-size: 20px;
             z-index: 99;
@@ -124,7 +124,7 @@
             width: 20px;
             height: 20px;
             position: absolute;
-            top: 130px;
+            top: 135px;
             left: 65px;
             font-size: 20px;
             z-index: 99;
