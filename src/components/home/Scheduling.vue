@@ -9,9 +9,9 @@
       <ul class="picture">
         <li class="fl--left">
           <div><a href="#"><img src="../../assets/pic-1.jpg" alt=""></a></div>
-          <router-link to="/detail" replace>
-            <button>Study Now</button>
-          </router-link>
+
+          <button @click="goDetail">Study Now</button>
+
           <div class="con">
             <div class="circle fl--left">
               <div class="text-circle text--bold">88</div>
@@ -74,6 +74,11 @@
         radio4: '上海',
         radio5: '上海',
       };
+    },
+    methods: {
+      goDetail(){
+        this.$router.push('detail')
+      }
     }
   }
 </script>
