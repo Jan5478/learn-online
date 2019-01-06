@@ -58,16 +58,6 @@
       handleClick(tab, event) {
         console.log(tab, event);
       },
-      setNewsApi: function() {
-        api.mockdata('/showIndex/banner', 'type=top&key=123456')
-          .then(res => {
-            console.log(res);
-            this.newsListShow = res.articles;
-          });
-      },
-    },
-    mounted(){
-      this.axiosGetbanner()
     }
   }
 </script>
