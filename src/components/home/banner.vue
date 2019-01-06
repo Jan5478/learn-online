@@ -57,6 +57,8 @@
     methods: {
       handleClick(tab, event) {
         console.log(tab, event);
+        api.testGet('/getData');
+
       },
     }
   }
