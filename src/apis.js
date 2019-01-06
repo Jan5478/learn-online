@@ -42,13 +42,13 @@ export function get(action) {
   return axios.get(testDomain + action)
     .then(function (response) {
       // handle success
-      console.log(response);
-      console.log('xxxxxxxxxxxxxxxxxxxxxxx')
+      console.log("返回mock.js 的数据没有呀：   ", response.data);
+      // console.log('xxxxxxxxxxxxxxxxxxxxxxx')
     })
     .catch(function (error) {
       // handle error
       console.log(error);
-      console.log('xxxxxxxxxxxxxxxxxxxxxxx 有错误')
+      // console.log('xxxxxxxxxxxxxxxxxxxxxxx 有错误')
     })
     .then(function () {
       // always executed
@@ -66,3 +66,7 @@ export default {
   }
 
 }
+
+// $.ajax()  console.log()
+
+//  new AsynXmRequest().Get()  url , params,  data,  header
