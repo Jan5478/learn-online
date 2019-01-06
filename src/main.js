@@ -3,17 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import VueRouter from 'vue-router'
-import Vuex from 'vuex';
+import store from './store/store.js'
+import axios from 'axios';
 
-Vue.use(VueRouter);
-Vue.use(Vuex);
-
-const store = new Vuex.Store({
-  state: {},
-  mutations:{},
-  getters: {},
-});
+axios.defaults.baseURL = 'http://learn-online.com/api' ; // 设置默认请求的url
+Vue.prototype.$http = axios;
 
 import { Row, Col, Icon, Menu, MenuItem, Submenu, Carousel, CarouselItem, Tabs, TabPane, Input, Button, RadioButton, RadioGroup } from 'element-ui';
 Vue.use(Row);
@@ -35,6 +29,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/dist/css/swiper.css'
 Vue.use(VueAwesomeSwiper);
 
+require('./mock.js');
 
 import './assets/icon/font_981340_9dk3pyi0mcf/iconfont.css';
 
