@@ -36,6 +36,7 @@ export function post(action, params) {
   })
 }
 
+
 // 封装axios的post请求
 export function get(action) {
   return axios.get(testDomain + action)
