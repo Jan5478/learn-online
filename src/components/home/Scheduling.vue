@@ -10,13 +10,13 @@
         <li class="fl--left" v-for="(item,index) in pics" :key="index">
           <div>
             <a href="#">
-              <img :src="item" alt="">
+              <img :src="item.img_url" alt="">
             </a>
           </div>
           <button @click="goDetail">Study Now</button>
           <div class="con">
             <div class="circle fl--left">
-              <div class="text-circle text--bold">88</div>
+              <div class="text-circle text--bold">{{ item.number }}</div>
             </div>
             <p>%<br/>Want to see</p>
           </div>

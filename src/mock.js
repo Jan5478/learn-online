@@ -62,12 +62,21 @@ Mock.mock('http://localhost:8080/getHot',function (reqParam) {
 Mock.mock('http://localhost:8080/getScheduling',function (reqParam) {
   // console.log(reqParam);
   return Mock.mock({
-    'name':'learn',
-    'describe': 'learnEnglish',
-    'imgs': [
-      'https://img11.360buyimg.com/n7/jfs/t20365/316/1216991915/173915/859d65d4/5b221170Nfc40038d.jpg',
-      'https://img11.360buyimg.com/n7/jfs/t1/12102/11/4461/130121/5c30ccf4E4b696c41/4c48e92deea71d02.jpg',
-      'https://img10.360buyimg.com/n7/jfs/t1/20150/20/4499/301648/5c32be24Ed9438a1b/c92c9f8de8f310c5.jpg',
+    "name":"learn",
+    "describe": "learnEnglish",
+    "imgs": [
+      {
+        "img_url":"https://img11.360buyimg.com/n7/jfs/t20365/316/1216991915/173915/859d65d4/5b221170Nfc40038d.jpg",
+        "number|80-97": 80
+      },
+      {
+        "img_url":"https://img11.360buyimg.com/n7/jfs/t1/12102/11/4461/130121/5c30ccf4E4b696c41/4c48e92deea71d02.jpg",
+        "number|80-97": 80
+      },
+      {
+        "img_url":"https://img10.360buyimg.com/n7/jfs/t1/20150/20/4499/301648/5c32be24Ed9438a1b/c92c9f8de8f310c5.jpg",
+        "number|80-97": 80
+      }
     ],
   })
 });
