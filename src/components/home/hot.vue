@@ -1,11 +1,15 @@
 <template>
-  <swiper :options="swiperOption" class="hot_swiper">
-    <swiper-slide v-for="slide in swiperSlides" :key="slide">I'm Slide {{ slide }}</swiper-slide>
+  <swiper v-if="swiperSlides.length > 1" :options="swiperOption" class="hot_swiper">
+    <swiper-slide   v-for="(slide,index) in swiperSlides" :key="index">
+      <img :src="slide" alt="">
+    </swiper-slide>
   </swiper>
 </template>
 
 <script>
   import { swiper, swiperSlide } from 'vue-awesome-swiper';
+  import api from '../../apis.js'
+
   export default {
     name: 'hot',
     data() {
@@ -19,7 +23,17 @@
           spaceBetween: 30,
           loop: true
         },
-        swiperSlides: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        swiperSlides: []
+      }
+    },
+    created(){
+      this.getHot()
+    },
+    methods: {
+      getHot(){
+        api.testGet('/getHot').then(val => {
+          this.swiperSlides = val.imgs
+        })
       }
     }
   }

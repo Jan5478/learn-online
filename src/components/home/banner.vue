@@ -2,8 +2,8 @@
   <div class="banner_container fl--clear">
     <div class="block fl--left">
       <el-carousel trigger="click" height="400px">
-        <el-carousel-item v-for="item in 4" :key="item">
-          <h3>{{ item }}</h3>
+        <el-carousel-item v-for="item in bannerList" :key="item">
+          <img :src="item" alt="">
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -52,14 +52,23 @@
         stretch: true,
         inputNum: '',
         inputPass: '',
+        bannerList: []
       };
+    },
+    created(){
+      this.getBanner(); // 在页面渲染完成即加载
     },
     methods: {
       handleClick(tab, event) {
         console.log(tab, event);
-        api.testGet('/getData');
-
       },
+      getBanner(){
+        api.testGet('/getBanner').then(val => {
+          this.bannerList = val.imgs;
+        });
+
+        // this.bannerList = api.response;
+      }
     }
   }
 </script>

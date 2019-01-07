@@ -7,36 +7,18 @@
         <el-radio-button label="Comming Soon"></el-radio-button>
       </el-radio-group>
       <ul class="picture">
-        <li class="fl--left">
-          <div><a href="#"><img src="../../assets/pic-1.jpg" alt=""></a></div>
-
+        <li class="fl--left" v-for="(item,index) in pics" :key="index">
+          <div>
+            <a href="#">
+              <img :src="item" alt="">
+            </a>
+          </div>
           <button @click="goDetail">Study Now</button>
-
           <div class="con">
             <div class="circle fl--left">
               <div class="text-circle text--bold">88</div>
             </div>
             <p>%<br/>Want to see</p>
-          </div>
-        </li>
-        <li class="fl--left">
-          <div><a href="#"><img src="../../assets/pic-1.jpg" alt=""></a></div>
-          <button>Study Now</button>
-          <div class="con">
-            <div class="circle fl--left">
-              <div class="text-circle text--bold">88</div>
-            </div>
-            <p>%<br/>Want to see</p>
-          </div>
-        </li>
-        <li class="fl--left">
-          <div><a href="#"><img src="../../assets/pic-1.jpg" alt=""></a></div>
-          <button>Study Now</button>
-          <div class="con">
-            <div class="circle fl--left">
-              <div class="text-circle text--bold">88</div>
-            </div>
-            <p fl--left>%<br/>Want to see</p>
           </div>
         </li>
       </ul>
@@ -62,6 +44,7 @@
 
 <script>
   import detail from '../detail/detail.vue';
+  import api from '../../apis.js';
 
   export default {
     name: "Scheduling",
@@ -73,11 +56,20 @@
         radio3: '上海',
         radio4: '上海',
         radio5: '上海',
+        pics: [],
       };
+    },
+    created(){
+      this.getPic()
     },
     methods: {
       goDetail(){
         this.$router.push('detail')
+      },
+      getPic(){
+        api.testGet('/getScheduling').then(val => {
+          this.pics = val.imgs;
+        })
       }
     }
   }

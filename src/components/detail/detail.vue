@@ -58,6 +58,10 @@
 <style lang="scss">
   @import '../../../src/scss/common.scss';
   .detail-container {
+    .el-menu {
+      position: fixed;
+      width: 100%;
+    }
     .home-icon {
       font-size: 25px !important;
     }

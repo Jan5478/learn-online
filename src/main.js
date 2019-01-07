@@ -4,11 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store/store.js'
-import axios from 'axios';
-
-
-axios.defaults.baseURL = 'http://learn-online.com/api' ; // 设置默认请求的url
-Vue.prototype.$http = axios;
+// import axios from 'axios'
+//
+//
+// axios.defaults.baseURL = 'http://learn-online.com/api' ; // 设置默认请求的url
+// Vue.prototype.$axios = axios;
 require('./mock');
 
 import { Row, Col, Icon, Menu, MenuItem, Submenu, Carousel, CarouselItem, Tabs, TabPane, Input, Button, RadioButton, RadioGroup } from 'element-ui';

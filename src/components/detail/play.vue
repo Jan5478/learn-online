@@ -23,6 +23,7 @@
 <style lang="scss" scoped>
   .play-container {
     background-color: #f6f6f6;
+    padding-top: 62px;
     p {
       padding: 20px;
       text-align: center;

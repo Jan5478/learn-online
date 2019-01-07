@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // 获取 服务端 域名的 方法 （测试环境，正式环境的）
 
-const testDomain = "http://localhost:8080"
+const testDomain = "http://localhost:8080";
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
@@ -37,24 +37,20 @@ export function post(action, params) {
 }
 
 
-// 封装axios的post请求
+// 封装axios的get请求
 export function get(action) {
-  return axios.get(testDomain + action)
-    .then(function (response) {
-      // handle success
-      console.log("返回mock.js 的数据没有呀：   ", response.data);
-      // console.log('xxxxxxxxxxxxxxxxxxxxxxx')
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-      // console.log('xxxxxxxxxxxxxxxxxxxxxxx 有错误')
-    })
-    .then(function () {
-      // always executed
-      console.log('  这是 什么 贵 ----------------')
-    });
-
+  return new Promise ((resolve, reject) => {
+    axios.get(testDomain + action)
+      .then(function (response) {
+        // handle success
+        resolve(response.data)
+      })
+      .catch(function (error) {
+        // handle error
+        reject(error);
+        console.log('xxxxxxxxxxxxxxxxxxxxxxx 有错误')
+      })
+  })
 }
 
 export default {
@@ -64,7 +60,6 @@ export default {
   testGet(action) {
     return get(action)
   }
-
 }
 
 // $.ajax()  console.log()
